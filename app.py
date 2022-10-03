@@ -1,10 +1,8 @@
 import os
-import cv2
 import pickle
 import tensorflow
 import numpy as np
 from PIL import Image
-import bz2file as bz2
 import streamlit as st
 from numpy.linalg import norm
 from sklearn.neighbors import NearestNeighbors
@@ -12,26 +10,11 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.layers import GlobalMaxPooling2D
 from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input
 
-file = bz2.BZ2File('distancez2.pbz2', 'rb')
-distance = pickle.load(file)
-
-file = bz2.BZ2File('filenamesz2.pbz2', 'rb')
-filenames = pickle.load(file)
-
-file = bz2.BZ2File('linkz2.pbz2', 'rb')
-link = pickle.load(file)
-
-file = bz2.BZ2File('namesz2.pbz2', 'rb')
-names = pickle.load(file)
-
-file = bz2.BZ2File('stylez2.pbz2', 'rb')
-data = pickle.load(file)
-
-# filenames = pickle.load(open('filenames.pkl', 'rb'))
-# distance = pickle.load(open('distance.pkl', 'rb'))
-# data = pickle.load(open('style.pkl', 'rb'))
-# names = pickle.load(open('names.pkl', 'rb'))
-# link = pickle.load(open('link.pkl', 'rb'))
+filenames = pickle.load(open('filenames.pkl', 'rb'))
+distance = pickle.load(open('distance.pkl', 'rb'))
+data = pickle.load(open('style.pkl', 'rb'))
+names = pickle.load(open('names.pkl', 'rb'))
+link = pickle.load(open('link.pkl', 'rb'))
 image = Image.open('myimage.jpg')
 
 model = ResNet50(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
@@ -56,10 +39,8 @@ def save_uploaded_file(uploaded_image):
 
 
 def feature_extraction(path, model):
-    # img = image.load_img(path, target_size=(224, 224))
-    # img_array = image.img_to_array(img)
-    img = cv2.imread(path, cv2.IMREAD_COLOR)
-    img_array = cv2.resize(img, (224, 224))
+    img = image.load_img(path, target_size=(224, 224))
+    img_array = image.img_to_array(img)
     expanded_img_array = np.expand_dims(img_array, axis=0)
     preprocessed_img = preprocess_input(expanded_img_array)
     result = model.predict(preprocessed_img).flatten()
