@@ -2,7 +2,7 @@
 
 This is a deep learning based fashion reverse image search engine that uses the ResNet50 model. The model is trained on 45,000 fashion product images and allows users to search for similar products based on an image query.
 
-# Installation
+## Installation
 
 To install and run the project, follow these steps:
 
@@ -12,7 +12,7 @@ To install and run the project, follow these steps:
 
 Note: Due to file size limitations, some files are not included in the repository. Please contact us if you need these files.
 
-# Usage
+## Usage
 
 To use the fashion reverse image search engine, follow these steps:
 
@@ -20,7 +20,7 @@ To use the fashion reverse image search engine, follow these steps:
     2. Click the "Search" button.
     3. The app will return a list of similar products based on the uploaded image.
     
- # Contributing
+ ## Contributing
 
 We welcome contributions to this project. If you want to contribute, please follow these guidelines:
 
@@ -30,6 +30,6 @@ We welcome contributions to this project. If you want to contribute, please foll
     4. Push your changes to your forked repository.
     5. Create a pull request with a clear description of your changes.
     
-  # Contact
+  ## Contact
 
 If you have any questions or issues, please contact us at rishabhvyas472@gmail.com
