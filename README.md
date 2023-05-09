@@ -32,4 +32,4 @@ We welcome contributions to this project. If you want to contribute, please foll
     
   ## Contact
 
-If you have any questions or issues, please contact us at rishabhvyas472@gmail.com
+If you have any questions or issues, please contact at rishabhvyas472@gmail.com
